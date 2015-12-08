@@ -2,6 +2,9 @@
     "name": "tdd-ready-node",
     "version": "1.0.0",
     "private": false,
+    "engines": {
+        "node": "4.1.0"
+    },
     "dependencies": {
         "body-parser": "latest",
         "compression": "latest",
