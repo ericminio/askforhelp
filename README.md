@@ -1,6 +1,6 @@
 A test-driven node application
 
-[![Build Status](https://travis-ci.org/ericminio/tdd-ready-node.svg?branch=master)](https://travis-ci.org/ericminio/tdd-ready-node)
+[![Build Status](https://travis-ci.org/ericminio/askforhelp.svg?branch=master)](https://travis-ci.org/ericminio/askforhelp)
 
 ## Get ready
 
@@ -15,13 +15,6 @@ Check your install: run the test
 ```sh
 npm test
 ```
-
-You should see 1 test failing
-
-## Start!
-
-Change the failing test to start your adventure
-
 
 ## Run the app
 

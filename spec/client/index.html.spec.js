@@ -39,7 +39,7 @@ describe('index.html', function() {
         });
 
         it('has the expected title', function() {
-            expect(document.getElementsByTagName('title')[0].innerHTML).to.equal('Who am I?');
+            expect(document.getElementsByTagName('title')[0].innerHTML).to.equal('AskForHelp');
         });
 
         it('has a welcome message', function() {
