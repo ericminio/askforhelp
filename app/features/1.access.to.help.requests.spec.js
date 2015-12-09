@@ -8,8 +8,8 @@ describe('help requests', function() {
     var url = 'http://localhost:' + port;
     var Server = require('../server/server');
     var requests = [
-        { login:'Joe', data:'this is what Joe shared about himself' },
-        { login:'Dana', data:'this is what Dana shared about herself' }
+        { id:25, login:'Joe', data:'this is what Joe shared about himself' },
+        { id:12, login:'Dana', data:'this is what Dana shared about herself' }
     ];
 
     beforeEach(function(done) {
@@ -58,6 +58,19 @@ describe('help requests', function() {
             browser.visit(url + '/index.html')
                 .then(function() {
                     browser.assert.text('#help-request-count', '2');
+                })
+                .then(function() {
+                    browser.assert.elements('#help-requests .help-request', 2);
+                })
+                .then(function() {
+                    browser.assert.element('#help-request-25');
+                    browser.assert.element('#help-request-12');
+                })
+                .then(function() {
+                    expect(browser.document.querySelector('#help-request-12').innerHTML).to.contain('Dana');
+                })
+                .then(function() {
+                    expect(browser.document.querySelector('#help-request-12').innerHTML).to.contain('this is what Dana shared about herself');
                 })
                 .then(done, done);
         });

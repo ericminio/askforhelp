@@ -38,6 +38,11 @@ Server.prototype.createHttpRoutes = function () {
         var content = require('fs').readFileSync('app/client/pages/index.html').toString();
         self.database.getHelpRequests(function(requests) {
             content = content.replace('id="help-request-count"><', 'id="help-request-count">'+ requests.length +'<');
+            items = "";
+            requests.forEach(function(request) {
+                items += '<li class="help-request" id="help-request-'+ request.id + '">'+ request.login +': '+ request.data +'</li>';
+            });
+            content = content.replace('<ul id="help-requests"></ul>', '<ul id="help-requests">' + items + '</ul>');
             response.writeHead(200, {'content-type': 'text/html'});
             response.write(content);
             response.end();
