@@ -3,7 +3,7 @@ describe('index.html', function() {
     describe('serving', function() {
 
         var Zombie = require("zombie");
-        var Server = require('../../app/server/server');
+        var Server = require('../../server/server');
 
         var port = 5000;
         var url = 'http://localhost:' + port;
@@ -35,15 +35,11 @@ describe('index.html', function() {
         var document;
 
         beforeEach(function() {
-            document = jsdom(require('fs').readFileSync('./app/client/index.html'));
+            document = jsdom(require('fs').readFileSync('./app/client/pages/index.html'));
         });
 
         it('has the expected title', function() {
             expect(document.getElementsByTagName('title')[0].innerHTML).to.equal('AskForHelp');
-        });
-
-        it('has a welcome message', function() {
-            expect(document.querySelector('#welcome')).not.to.equal(undefined);
         });
     });
 });

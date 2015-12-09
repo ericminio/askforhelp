@@ -20,9 +20,8 @@ describe('Start script', function() {
     });
 
     it('starts a server', function(done) {
-        var homePage = require('fs').readFileSync('app/client/index.html').toString();
         request(home + '/index.html', function(err, response, body) {
-            expect(body).to.equal(homePage);
+            expect(response.statusCode).to.equal(200);
             done();
         });
     });

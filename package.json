@@ -24,7 +24,7 @@
     },
     "scripts": {
         "start": "node start.js",
-        "test": "mocha spec --recursive",
+        "test": "mocha app --recursive",
         "test:coverage": "istanbul cover node_modules/mocha/bin/_mocha -- spec --recursive"
     }
 }
